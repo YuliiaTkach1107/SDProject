@@ -6,6 +6,8 @@ if (! defined('ABSPATH')) {
 
 function sd_theme_enqueue_assets(): void
 {
+    wp_enqueue_style('dashicons');
+
     $manifest_path = get_theme_file_path('/dist/.vite/manifest.json');
 
     if (! file_exists($manifest_path)) {
@@ -73,7 +75,7 @@ add_filter(
 );
 
 
-// MENUS
+// Menus
 function sd_register_nav_menu(){
     register_nav_menus( array(
         'main' => __( 'Головне меню', 'vue-wp-theme' ),
@@ -101,10 +103,16 @@ function sd_get_menus(){
 function vue_wp_get_data(): array
 {
     $data = [
-        'acf'     => null,
+        'acf' => null,
         'menus' => sd_get_menus(),
+        'contactForm' => '',
+        'logo' => esc_url( wp_get_attachment_url( get_theme_mod( 'custom_logo' ) ) ),
        
     ];
+    if ( shortcode_exists( 'fluentform' ) ) {
+        $data['contactForm'] = do_shortcode( '[fluentform id="3"]' );
+    }
+
     if (function_exists('get_fields')) {
         $post_id = get_queried_object_id();
 
@@ -113,6 +121,5 @@ function vue_wp_get_data(): array
     }
 
     return $data;
-
-
 }
+add_theme_support( 'custom-logo' );

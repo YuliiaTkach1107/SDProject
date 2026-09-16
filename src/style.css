@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 :root {
 
@@ -8,5 +9,178 @@
     --font-heading: "Cormorant", serif;
     --font-body: "Jost", sans-serif;
     --font-accent: "Poppins", sans-serif;
+    --font-menu: "Lora", serif;
 
+    /* Colors */
+
+    /*Text*/
+    --text-primary:#463028;
+    --text-secondary:#6B5D56;
+    --text-button-primary:#FFFFFF;
+    --text-button-secondary:#80716A;
+
+    /*Backgrounds*/
+    --bg-primary:#F7DED9;
+    --bg-secondary:rgb(160, 143, 135, 0.1);
+    --bg-menu:#FEFAF8;
+    --bg-basic:#FFFFFF;
+    --bg-button-primary:#80716A;
+    --bg-button-secondary:#FFFFFF;
+    --bg-card-pink:#FAEEED;
+    --bg-card-gray:#EAE8E6;
+    --bg-card-rose:#F7E4E5;
+    --bg-card-peach:#FBEAE7;
+    
+    
+    /*Decoration*/
+    --circle-primary:#F7DED9;
+    --circle-secondary:#E4AAA9;
+    --circle-tertiary:#A08F87;
+    --circle-quaternary:#F7DED9;
+
+    /*Borders*/
+    --border-primary:#463028;
+
+    /*Cards*/
+    --icon-color:#A08F86;
+}
+
+section{
+    @apply px-20;
+}
+h1 span, h2 span, h2{
+  font-family: var(--font-heading);
+}
+h1 span, h1{
+    @apply text-7xl mt-4 mb-8 font-extralight;
+}
+h2, h2 span{
+    @apply text-4xl mt-4 mb-6 font-extralight;
+}
+h3{
+    font-family: var(--font-body);
+    @apply text-xl text-[var(--text-primary)];
+}
+h4{
+    font-family: var(--font-body);
+    @apply text-lg text-[var(--text-primary)];
+}
+nav li a{
+    font-family: var(--font-menu);
+}
+span,a{
+    font-family: var(--font-accent);
+}
+span{
+    @apply text-base tracking-[0.03em] text-[var(--text-secondary)];
+}
+span.hero_name, span.about_title_1{
+    @apply text-[var(--text-primary)];
+}
+span.hero_surname, span.about_title_2{
+    @apply text-[var(--text-secondary)];
+}
+p{
+    font-family: var(--font-body);
+    font-weight:200;
+    @apply text-lg tracking-[0.03em] text-[var(--text-primary)];
+}
+a{
+    @apply text-base tracking-[0.03em] px-4 py-3 rounded-lg shadow-sm;
+}
+a.menu_link, 
+a.logo{
+    @apply text-xl tracking-[0.03em] rounded-none shadow-none py-0 px-0;
+}
+.practice-card{
+    @apply w-full h-full;
+}
+
+.dashicons{
+    @apply text-3xl text-[var(--icon-color)] bg-white/70 w-14 h-14 rounded-full flex items-center justify-center;
+}
+.material-symbols-outlined{
+    @apply text-[var(--text-button-primary)] m-auto;
+}
+
+.practice-card {
+    @apply bg-[var(--card-background)] rounded-lg shadow-md p-6;
+}
+
+.practice-card--pink { --card-background: var(--bg-card-pink); }
+.practice-card--gray { --card-background: var(--bg-card-gray); }
+.practice-card--rose { --card-background: var(--bg-card-rose); }
+.practice-card--peach { --card-background: var(--bg-card-peach); }
+
+h3.practice-title{
+    font-family: var(--font-heading);
+    @apply tracking-[0.03em];
+}
+p.practice-description{
+    @apply text-base;
+}
+.practice-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.mySwiper .swiper-pagination-bullet {
+    @apply bg-[var(--text-secondary)] mt-5;
+}
+
+.banner {
+    position: relative;
+    @apply rounded-lg bg-cover bg-center bg-no-repeat p-8 flex flex-col items-center justify-center h-70 gap-4;
+}
+
+.banner::before {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgb(255 255 255 / 20%);
+    content: "";
+}
+
+.banner > * {
+    position: relative;
+    z-index: 1;
+}
+.banner h3{
+    font-family: var(--font-heading);
+    @apply text-2xl tracking-[0.03em] !font-extralight;
+}
+.banner p{
+    @apply text-base;
+}
+.banner p, 
+.banner h3 {
+    @apply text-white;
+}
+.contact_details .dashicons{
+    @apply text-base text-[var(--icon-color)] w-10 h-10 border border-[var(--border-primary)] bg-transparent rounded-full flex items-center justify-center;
+}
+.field{
+    @apply flex flex-col;
+}
+input, textarea{
+    @apply border border-[var(--border-primary)] rounded-lg px-4 py-2 text-[var(--text-primary)] tracking-[0.03em] text-lg;
+}
+label{
+    font-family: var(--font-body);
+    @apply text-lg text-[var(--text-primary)] mb-2 tracking-[0.03em];
+}
+input::placeholder,
+textarea::placeholder {
+    @apply text-lg text-[var(--text-secondary)] tracking-[0.03em];
+
+}
+button[type="submit"]{
+    @apply bg-[var(--bg-button-primary)] text-[var(--text-button-primary)] tracking-[0.03em] px-4 py-2 rounded-lg shadow-sm;
+}
+.last_menu_link {
+    @apply flex items-center !text-lg text-[var(--text-button-primary)] bg-[var(--bg-button-primary)] font-(family-name:--font-body) tracking-[0.03em] !px-4 !py-2 !rounded-sm;
+}
+.last_footer_menu_link{
+    @apply hidden;
 }
