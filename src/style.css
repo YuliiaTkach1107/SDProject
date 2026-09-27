@@ -50,7 +50,10 @@ html, body{
     @apply scroll-smooth; 
 }
 section{
-    @apply px-10 lg:px-20 scroll-mt-20;
+    @apply px-10 lg:px-20 py-10 lg:py-15 scroll-mt-20;
+}
+#hero_section{
+    @apply !py-0;
 }
 h1 span, h2 span, h2{
   font-family: var(--font-heading);
@@ -59,7 +62,7 @@ h1 span, h1{
     @apply text-4xl lg:text-7xl mt-2 lg:mt-4 mb-4 lg:mb-8 font-extralight;
 }
 h2, h2 span{
-    @apply text-4xl mt-4 mb-6 font-extralight;
+    @apply text-2xl lg:text-4xl mt-2 mb-4 lg:mt-4 lg:mb-6 font-extralight;
 }
 h3{
     font-family: var(--font-body);
