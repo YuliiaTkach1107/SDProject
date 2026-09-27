@@ -107,6 +107,7 @@ function vue_wp_get_data(): array
         'menus' => sd_get_menus(),
         'contactForm' => '',
         'logo' => esc_url( wp_get_attachment_url( get_theme_mod( 'custom_logo' ) ) ),
+        'site_url'=>site_url(),
        
     ];
     if ( shortcode_exists( 'fluentform' ) ) {

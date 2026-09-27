@@ -8,7 +8,7 @@ const menus = computed(() => wpData.menus ?? {});
 const logo = computed(() => wpData.logo ?? {});
 </script>
 <template>
-    <footer class="flex px-15 py-6 gap-50">
+    <!-- <footer class="flex px-15 py-6 gap-50">
         <div class="flex flex-col gap-4">
             <a v-if="logo" :href="'/'" class="logo">
                 <img :src="logo" alt="Logo" class="h-auto w-40 py-2" />
@@ -30,5 +30,5 @@ const logo = computed(() => wpData.logo ?? {});
                 </ul>
             </nav>
             <ContactDetails />
-    </footer>
+    </footer> -->
 </template>

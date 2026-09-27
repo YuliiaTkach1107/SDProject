@@ -36,7 +36,7 @@ const groupedServices = computed(() => {
                                 </td>
 
                                 <td class="text-center w-50">
-                                    <p v-if="details[0].price">{{ details[0].price }}</p>
+                                    <p v-if="details[0].price" class="!font-medium">{{ details[0].price }}</p>
                                     <p v-if="details[0].price_note">{{ details[0].price_note }}</p>
                                 </td>
 
@@ -61,7 +61,7 @@ const groupedServices = computed(() => {
                                     </td>
 
                                     <td class="text-center w-50" :class="index > 0 ? 'pt-3' : ''">
-                                        <p v-if="detail.price">{{ detail.price }}</p>
+                                        <p v-if="detail.price" class="!font-medium">{{ detail.price }}</p>
                                         <p v-if="detail.price_note">{{ detail.price_note }}</p>
                                     </td>
 
